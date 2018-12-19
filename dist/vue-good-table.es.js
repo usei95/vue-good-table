@@ -1367,15 +1367,16 @@ var VueGoodTable = {
           }
         }])
       }) : _vm._e(), _vm._v(" "), _vm._l(headerRow.children, function (row, index$$1) {
-        return [_vm.rowHeader ? _c('th', {
-          key: row.orginalIndex,
+        return [_c('tr', {
+          key: row.originalIndex
+        }, [_vm.rowHeader ? _c('th', {
           staticClass: "vgt-left-align vgt-row-header",
           attrs: {
             "colspan": _vm.fullColspan
           }
         }, [_vm._t("row-header", null, {
           row: row
-        })], 2) : _vm._e(), _vm._v(" "), _c('tr', {
+        })], 2) : _vm._e()]), _vm._v(" "), _c('tr', {
           key: row.orginalIndex,
           class: _vm.getRowStyleClass(row),
           on: {

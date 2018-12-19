@@ -143,8 +143,8 @@
             </vgt-header-row>
             <!-- normal rows here. we loop over all rows -->
             <template v-for="(row, index) in headerRow.children">
+              <tr :key="row.originalIndex">
                <th
-                :key="row.orginalIndex"
                 class="vgt-left-align vgt-row-header"
                 v-if="rowHeader"
                 :colspan="fullColspan">
@@ -153,6 +153,7 @@
                   name="row-header">
                 </slot>
               </th>
+              </tr>
               <tr
               :key="row.orginalIndex"
               :class="getRowStyleClass(row)"
