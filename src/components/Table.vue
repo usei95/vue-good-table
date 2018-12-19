@@ -142,9 +142,24 @@
               </template>
             </vgt-header-row>
             <!-- normal rows here. we loop over all rows -->
-            <tr
-              v-for="(row, index) in headerRow.children"
-              :key="row.originalIndex"
+            <template v-for="(row, index) in headerRow.children">
+               <th
+                :key="row.orginalIndex"
+                class="vgt-left-align vgt-row-header"
+                v-if="rowHeader"
+                :colspan="fullColspan">
+                <slot
+                  :row="headerRow"
+                  name="table-header-row">
+                  <span v-if="headerRow.html" v-html="headerRow.label">
+                  </span>
+                  <span v-else>
+
+                  </span>
+                </slot>
+              </th>
+              <tr
+              :key="row.orginalIndex"
               :class="getRowStyleClass(row)"
               @mouseenter="onMouseenter(row, index)"
               @mouseleave="onMouseleave(row, index)"
@@ -181,6 +196,7 @@
                 </slot>
               </td>
             </tr>
+            </template>
             <!-- if group row header is at the bottom -->
             <vgt-header-row
               v-if="groupHeaderOnBottom"
@@ -289,6 +305,7 @@ export default {
     responsive: { default: true },
     rtl: { default: false },
     rowStyleClass: { default: null, type: [Function, String] },
+    rowHeader: { default: false },
 
     groupOptions: {
       default() {

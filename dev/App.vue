@@ -16,6 +16,7 @@
       @on-search="onSearch"
       @on-selected-rows-change="onSelectChanged"
       :columns="columns"
+      :row-header="true"
       :rows="rows"
       theme="black-rhino"
       :pagination-options="{

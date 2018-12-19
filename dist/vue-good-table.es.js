@@ -1367,8 +1367,20 @@ var VueGoodTable = {
           }
         }])
       }) : _vm._e(), _vm._v(" "), _vm._l(headerRow.children, function (row, index$$1) {
-        return _c('tr', {
-          key: row.originalIndex,
+        return [_vm.rowHeader ? _c('th', {
+          key: row.orginalIndex,
+          staticClass: "vgt-left-align vgt-row-header",
+          attrs: {
+            "colspan": _vm.fullColspan
+          }
+        }, [_vm._t("table-header-row", [headerRow.html ? _c('span', {
+          domProps: {
+            "innerHTML": _vm._s(headerRow.label)
+          }
+        }) : _c('span')], {
+          row: headerRow
+        })], 2) : _vm._e(), _vm._v(" "), _c('tr', {
+          key: row.orginalIndex,
           class: _vm.getRowStyleClass(row),
           on: {
             "mouseenter": function mouseenter($event) {
@@ -1422,7 +1434,7 @@ var VueGoodTable = {
             formattedRow: _vm.formattedRow(row),
             index: index$$1
           })], 2) : _vm._e();
-        })], 2);
+        })], 2)];
       }), _vm._v(" "), _vm.groupHeaderOnBottom ? _c('vgt-header-row', {
         attrs: {
           "header-row": headerRow,
@@ -1520,6 +1532,9 @@ var VueGoodTable = {
     rowStyleClass: {
       default: null,
       type: [Function, String]
+    },
+    rowHeader: {
+      default: false
     },
     groupOptions: {
       default: function _default() {
