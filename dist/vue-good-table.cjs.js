@@ -1379,12 +1379,8 @@ var VueGoodTable = {
           attrs: {
             "colspan": _vm.fullColspan
           }
-        }, [_vm._t("table-header-row", [headerRow.html ? _c('span', {
-          domProps: {
-            "innerHTML": _vm._s(headerRow.label)
-          }
-        }) : _c('span')], {
-          row: headerRow
+        }, [_vm._t("row-header", null, {
+          row: row
         })], 2) : _vm._e(), _vm._v(" "), _c('tr', {
           key: row.orginalIndex,
           class: _vm.getRowStyleClass(row),
