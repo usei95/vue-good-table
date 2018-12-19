@@ -70,16 +70,16 @@ var def = {
     } // row value
 
 
-    var rowValue = skipDiacritics ? String(rowval).toLowerCase() : diacriticless(String(rowval).toLowerCase()); // search term
+    var rowValue = skipDiacritics ? String(rowval).toLocaleLowerCase('tr-TR') : diacriticless(String(rowval).toLocaleLowerCase('tr-TR')); // search term
 
-    var searchTerm = skipDiacritics ? escapeRegExp(filter$$1).toLowerCase() : diacriticless(escapeRegExp(filter$$1).toLowerCase()); // comparison
+    var searchTerm = skipDiacritics ? escapeRegExp(filter$$1).toLocaleLowerCase('tr-TR') : diacriticless(escapeRegExp(filter$$1).toLocaleLowerCase('tr-TR')); // comparison
 
     return rowValue.indexOf(searchTerm) > -1;
   },
   compare: function compare(x, y) {
     function cook(d) {
       if (typeof d === 'undefined' || d === null) return '';
-      return diacriticless(d.toLowerCase());
+      return diacriticless(d.toLocaleLowerCase('tr-TR'));
     }
 
     x = cook(x);

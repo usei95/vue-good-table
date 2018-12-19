@@ -14,13 +14,13 @@ export default {
 
     // row value
     const rowValue = skipDiacritics
-      ? String(rowval).toLowerCase()
-      : diacriticless(String(rowval).toLowerCase());
+      ? String(rowval).toLocaleLowerCase('tr-TR')
+      : diacriticless(String(rowval).toLocaleLowerCase('tr-TR'));
 
     // search term
     const searchTerm = skipDiacritics
-      ? escapeRegExp(filter).toLowerCase()
-      : diacriticless(escapeRegExp(filter).toLowerCase());
+      ? escapeRegExp(filter).toLocaleLowerCase('tr-TR')
+      : diacriticless(escapeRegExp(filter).toLocaleLowerCase('tr-TR'));
 
     // comparison
     return (rowValue.indexOf(searchTerm) > -1);
@@ -29,7 +29,7 @@ export default {
   compare(x, y) {
     function cook(d) {
       if (typeof d === 'undefined' || d === null) return '';
-      return diacriticless(d.toLowerCase());
+      return diacriticless(d.toLocaleLowerCase('tr-TR'));
     }
     x = cook(x);
     y = cook(y);
