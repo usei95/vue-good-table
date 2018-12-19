@@ -38,8 +38,10 @@
         enabled: true,
         skipDiacritics: true,
       }">
+      <div slot="row-header" slot-scope="props">
+        <p>{{props.row}}</p>
+      </div>
     </vue-good-table>
-    <h3>Grouped Table</h3>
     <grouped-table></grouped-table>
   </div>
 </template>

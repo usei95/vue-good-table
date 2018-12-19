@@ -149,13 +149,8 @@
                 v-if="rowHeader"
                 :colspan="fullColspan">
                 <slot
-                  :row="headerRow"
-                  name="table-header-row">
-                  <span v-if="headerRow.html" v-html="headerRow.label">
-                  </span>
-                  <span v-else>
-
-                  </span>
+                  :row="row"
+                  name="row-header">
                 </slot>
               </th>
               <tr
